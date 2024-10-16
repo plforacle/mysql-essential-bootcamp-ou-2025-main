@@ -1,18 +1,18 @@
 # Database Design
 
 ## Introduction
-In this lab you will execute some SQL operations, practice using JSON and use MySQL Document Store.
+In this lab you will execute some SQL operations, practice using Joins and use Explain.
 
 Estimated Lab Time: 20 minutes
 
 ### Objectives
 In this lab, you will:
-* Work with SQL and JSON
-* Understand the functioning of MySQL Document Store 
-* Practice some CRUD operations
+-Work with SQL 
+-Practice some CRUD operations
+-Work with Joins and EXPLAIN
 
 > **Note:** 
-  * Server: mysql1
+  -Server: mysql1
 
 ## Task 1: Work with SQL
 
@@ -98,26 +98,52 @@ In this lab, you will:
 
 ## Task 2: Work with Joins
 
-1. Join (Inner Join)
-    -Returns rows from either table to appear in the result if and only if both tables meet the conditions specified in the ON clause
-2. Left Join (Outer Join)
-    -Returns all records from the left table and the matched records from the right table
-3. Right Join (Outer Join)
-    -Returns all records from the right table and the matched records from the left table
+1. Join (Inner Join): An inner join returns rows where there is a match between the joined tables based on the specified condition.
 
-
-4.  You can now exit from MySQL Shell
+    - List cities along with the countries they belong to
+    
     ```
-    <span style="color:blue">mysql></span> <copy>\q</copy>
+    <span style="color:blue">mysql></span> <copy>SELECT city.Name AS City, country.Name AS Country FROM city INNER JOIN country ON city.CountryCode = country.Code;</copy>
     ```
 
-5. Exit from client
+2. Left Join (Outer Join): A left join returns all rows from the left table and the matched rows from the right table. If there's no match, NULL values are included for the right table's columns.
 
+    - List all countries along with their cities.
+    
+    ```
+    <span style="color:blue">mysql></span> <copy>SELECT country.Name AS Country, city.Name AS City  FROM country LEFT JOIN city ON country.Code = city.CountryCode order by city.Name;</copy>
+    ```
+
+3. Left Semijoin (Outer Join): A left join returns all rows from the left table and the matched rows from the right table. If there's no match, NULL values are included for the right table's columns.
+
+    - List all countries along with their official languages.
+    
+    ```
+    <span style="color:blue">mysql></span> <copy>SELECT country.Name AS Country, countrylanguage.Language AS Language FROM country LEFT JOIN countrylanguage ON country.Code = countrylanguage.CountryCode AND countrylanguage.IsOfficial = 'T';</copy>
+    ```
+
+4. Right Join (Outer Join): A right join is similar to a left join but returns all rows from the right table and the matched rows from the left table.
+    - List all official languages along with the countries that speak them.
+
+    ```
+    <span style="color:blue">mysql></span> <copy>SELECT countrylanguage.Language AS Language, country.Name AS Country FROM countrylanguage RIGHT JOIN country ON countrylanguage.CountryCode = country.Code AND countrylanguage.IsOfficial = 'T';</copy>
+    ```
+
+## Task 3: Work with Joins
+
+1. Use the EXPLAIN command to show how MySQL will process this statement
+
+    ```
+    <span style="color:blue">mysql></span> <copy>EXPLAIN SELECT countrylanguage.Language AS Language, country.Name AS Country FROM countrylanguage RIGHT JOIN country ON countrylanguage.CountryCode = country.Code AND countrylanguage.IsOfficial = 'T';</copy>
+    ```
+
+2.  You can now exit from MySQL Shell
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
 
 ## Acknowledgements
-* **Author** - Marco Carlessi, Principal Sales Consultant
-* **Contributors** -  Perside Foster, MySQL Solution Engineering, Selena Sánchez, MySQL Solutions Engineer
-* **Last Updated By/Date** - Selena Sánchez, MySQL Solution Engineering, May 2023
+
+- **Author** - Marco Carlessi, Principal Sales Consultant
+- **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024

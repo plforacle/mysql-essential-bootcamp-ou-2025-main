@@ -145,8 +145,8 @@ In this lab, you will execute MySQL Shell and explore the following on the inter
 
 8. From now on, if you like, the labs may be completed with MySQL Shell instead of classic mysql client.
 
-
 ## Acknowledgements
-* **Author** - Marco Carlessi, Principal Sales Consultant
-* **Contributors** -  Perside Foster, MySQL Solution Engineering, Selena Sánchez, MySQL Solutions Engineer
-* **Last Updated By/Date** - Selena Sánchez, MySQL Solution Engineering, May 2023
+
+- **Author** - Marco Carlessi, Principal Sales Consultant
+- **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024

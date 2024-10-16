@@ -164,6 +164,7 @@ In this lab, you will:
     ```
 
 ## Acknowledgements
-* **Author** - Perside Foster, MySQL Solution Engineering, Selena Sánchez, MySQL Solutions Engineer
-* **Contributors** -  Perside Foster, MySQL Solution Engineering, Selena Sánchez, MySQL Solutions Engineer
-* **Last Updated By/Date** - Selena Sánchez, MySQL Solution Engineering, May 2023
+
+- **Author** - Marco Carlessi, Principal Sales Consultant
+- **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024

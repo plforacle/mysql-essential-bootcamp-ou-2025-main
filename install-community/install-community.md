@@ -174,6 +174,7 @@ In this lab, you will be guided through the following tasks:
 * https://dev.mysql.com/doc/refman/8.0/en/validate-password.htm
 
 ## Acknowledgements
-* **Author** - Marco Carlessi, Principal Sales Consultant
-* **Contributors** -  Perside Foster, MySQL Solution Engineering, Selena Sánchez, MySQL Solutions Engineer
-* **Last Updated By/Date** - Selena Sánchez, MySQL Solution Engineering, May 2023
+
+- **Author** - Marco Carlessi, Principal Sales Consultant
+- **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024
