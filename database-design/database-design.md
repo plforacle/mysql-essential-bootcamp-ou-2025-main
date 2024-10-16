@@ -6,15 +6,17 @@ In this lab you will execute some SQL operations, practice using Joins and use E
 Estimated Lab Time: 20 minutes
 
 ### Objectives
+
 In this lab, you will:
--Work with SQL 
--Practice some CRUD operations
--Work with Joins and EXPLAIN
+-Work with SQL CRUD
+-Work with SQL Index
+-Work with SQL JOINS
+-Work with SQL EXPLAINS
 
 > **Note:** 
   -Server: mysql1
 
-## Task 1: Work with SQL
+## Task 1: Work with SQL CRUD
 
 1. Connect to your <span style="color:red">mysql-advanced</span> with admin user
     ```
@@ -63,40 +65,39 @@ In this lab, you will:
     <span style="color:blue">mysql></span> <copy>show create table city_part\G</copy>
     ```
 
-8. Create an index on new table
+
+## Task 2: Work with SQL INDEX
+
+1. Create address table with an index
     ```
-    <span style="color:blue">mysql></span> <copy>CREATE INDEX myidindex ON city_part (ID);</copy>
+    <span style="color:blue">mysql></span> <copy>CREATE TABLE address (
+	id INT unsigned NOT NULL PRIMARY KEY,
+	email VARCHAR(100),
+	lname CHAR(30), 
+	fname CHAR(30),
+	INDEX name (lname, fname)
+	);</copy>
     ```
 
-9. Check table statistics. What is the Cardinality (=unique records) of primary key?
+2. Load data into address table
     ```
-    <span style="color:blue">mysql></span> <copy>SELECT * FROM INFORMATION_SCHEMA.STATISTICS WHERE table_name ='city' and table_schema='world'\G</copy>
-    ```
-
-10. Delete some columns (Population and CountryCode)
-    ```
-    <span style="color:blue">mysql></span> <copy>ALTER TABLE city_part DROP COLUMN Population;</copy>
-    ```
-    ```
-    <span style="color:blue">mysql></span> <copy>ALTER TABLE city_part DROP COLUMN CountryCode;</copy>
-    ```
-    ```
-    <span style="color:blue">mysql></span> <copy>SHOW CREATE TABLE city_part;</copy>
+    <span style="color:blue">mysql></span> <copy>INSERT INTO address (id, email, lname, fname) VALUES
+(1, 'john@example.com', 'Smith', 'John'),
+(2, 'jane@example.com', 'Doe', 'Jane'),
+(3, 'bob@example.com', 'Johnson', 'Bob'),
+(4, 'alice@example.com', 'Brown', 'Alice'),
+(5, 'mike@example.com', 'Williams', 'Mike');</copy>
     ```
 
-11. Optimize the table
+2. List address table
     ```
-    <span style="color:blue">mysql></span> <copy>OPTIMIZE TABLE city_part;</copy>
+    <span style="color:blue">mysql></span> <copy>select * from address;</copy>
     ```
-    > **Note:** warning is expected: https://dev.mysql.com/doc/refman/8.0/en/optimize-table.html
-
-12. Update table statistics
-
     ```
-    <span style="color:blue">mysql></span> <copy>ANALYZE TABLE city_part;</copy>
+    <span style="color:blue">mysql></span> <copy>select * from address where lname='smith';</copy>
     ```
 
-## Task 2: Work with Joins
+## Task 3: Work with JOINS
 
 1. Join (Inner Join): An inner join returns rows where there is a match between the joined tables based on the specified condition.
 
@@ -129,15 +130,25 @@ In this lab, you will:
     <span style="color:blue">mysql></span> <copy>SELECT countrylanguage.Language AS Language, country.Name AS Country FROM countrylanguage RIGHT JOIN country ON countrylanguage.CountryCode = country.Code AND countrylanguage.IsOfficial = 'T';</copy>
     ```
 
-## Task 3: Work with Joins
+## Task 4: Work with EXPLAINS
 
-1. Use the EXPLAIN command to show how MySQL will process this statement
+1. Use the EXPLAIN command to show how MySQL will process this index statement
+
+    ```
+    <span style="color:blue">mysql></span> <copy>explain select fname from address where lname='smith';</copy>
+    ```
+
+    - **Interpretation:** The optimizer plans to use the "name" index to match rows in the "address" table based on a constant value. The index is used to efficiently locate the relevant rows, and a WHERE clause is applied for further filtering. The optimizer estimates that only one row will be examined, and all rows are expected to be included in the result set.
+
+2. Use the EXPLAIN command to show how MySQL will process this Join/where statement
 
     ```
     <span style="color:blue">mysql></span> <copy>EXPLAIN SELECT countrylanguage.Language AS Language, country.Name AS Country FROM countrylanguage RIGHT JOIN country ON countrylanguage.CountryCode = country.Code AND countrylanguage.IsOfficial = 'T';</copy>
     ```
 
-2.  You can now exit from MySQL Shell
+    - **Interpretation:** The optimizer plans to perform a full table scan for the "country" table and use a non-unique index for the "countrylanguage" table, matching rows based on the "Code" column from the "country" table. The output provides valuable information for understanding and optimizing query performance.
+
+3. You can now exit from MySQL Shell
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
