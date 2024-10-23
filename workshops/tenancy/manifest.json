@@ -57,12 +57,12 @@
             "filename": "../../innodb-cluster/innodb-cluster.md"
         },
         {
-            "title": "Lab 8a: MySQL Enterprise Monitor",
-            "filename": "../../enterprise-monitor-manager/enterprise-monitor-manager.md"
+            "title": "Lab 8a: MySQL Monitoring Demo",
+            "filename": "../../demo/demo.md"
         },
         {
-            "title": "Demo: MySQL HeatWave",
-            "filename": "../../mysql-heatwave/mysql-heatwave.md"
+            "title": "HeatWave Demo",
+            "filename": "../../demo/demo.md"
         },
         {
             "title": "Addendum 1: Troubleshooting",
