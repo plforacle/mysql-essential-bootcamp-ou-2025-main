@@ -128,9 +128,15 @@ In this lab, you will work with:
     ```
 
 16. <span style="color:red">Administrative connection: </span>Now exit from administrative session on mysql1 and search the error in the error log.
+
+    ```
+    <span style="color:green">shell-mysql1></span> <copy>SET PERSIST mysql_firewall_trace=ON;</copy>
+    ```
+
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
+
     ```
     <span style="color:green">shell-mysql1></span> <copy>grep "MY-011191" /mysql/log/err_log.log</copy>
     ```
@@ -140,19 +146,13 @@ In this lab, you will work with:
     <span style="color:green">shell-mysql1></span> <copy>mysqlsh admin@mysql1:3307</copy>
     ```
     ```
-    <span style="color:blue">mysql></span> <copy>SELECT * FROM performance_schema.error_log WHERE ERROR_CODE='MY-011191';</copy>
+    <span style="color:blue">mysql></span> <copy>SELECT * FROM performance_schema.error_log WHERE ERROR_CODE='MY-011192';</copy>
     ```
 
 18. <span style="color:red">Administrative connection:</span> Disable now the firewall and exit from the client
     ```
     <span style="color:blue">mysql></span> <copy>CALL mysql.sp_set_firewall_mode('fwtest@%', 'OFF');</copy>
     ```
-    ```
-    <span style="color:blue">mysql></span> <copy>\q</copy>
-    ```
- 
-19. We can now close the administrative and user connections
-
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
@@ -293,7 +293,10 @@ In this lab, you will work with:
     ```
 
 ## Learn More
-* https://dev.mysql.com/doc/refman/8.0/en/firewall-installation.html
+
+* https://dev.mysql.com/doc/refman/8.4/en/firewall-installation.html
+* https://dev.mysql.com/doc/refman/8.4/en/audit-log-installation.html
+* https://dev.mysql.com/doc/refman/8.4/en/data-masking-components-installation.html
 
 
 ## Acknowledgements
