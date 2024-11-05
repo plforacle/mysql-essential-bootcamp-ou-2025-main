@@ -138,7 +138,7 @@ In this lab, you will work with:
     ```
 
     ```
-    <span style="color:green">shell-mysql1></span> <copy>grep "MY-011191" /mysql/log/err_log.log</copy>
+    <span style="color:green">shell-mysql1></span> <copy>grep "MY-011192" /mysql/log/err_log.log</copy>
     ```
 
 17. <span style="color:red">Administrative connection:</span> Error log can also be interrogated also from the client.
