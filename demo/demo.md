@@ -1,8 +1,6 @@
 # Demo
 
-
 ![MYSQLEE](images/live-demo.png "live demo")
-
 
 ## Acknowledgements
 
