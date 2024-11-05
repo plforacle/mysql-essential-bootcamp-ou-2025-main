@@ -71,16 +71,18 @@ In this lab, you will:
     ```
 
 3. <span style="color:red">mysql2 (replica):</span> We now create the my.cnf for second instance.  
-    Please note that the content is like teh one on mysql1, except for server_id: it’s mandatory that each server in a replication topology have a unique server id
+    Please note that the content is like the one on mysql1, except for server_id: it’s mandatory that each server in a replication topology have a unique server id
     ```
     <span style="color:green">shell-mysql2></span> <copy>sudo cp /workshop/support/my.cnf.mysql2 /mysql/etc/my.cnf</copy>
     ```
+        ```
+    <span style="color:green">shell-mysql2></span> <copy>nano /mysql/etc/my.cnf</copy>
+    ```
+
     ```
     <span style="color:green">shell-mysql2></span> <copy>sudo chown mysqluser:mysqlgrp /mysql/etc/my.cnf</copy>
     ```
-    ```
-    <span style="color:green">shell-mysql2></span> <copy>nano /mysql/etc/my.cnf</copy>
-    ```
+
 
 4. <span style="color:red">mysql2 (replica):</span> Then restore the backup
     * restore the backup from share folder

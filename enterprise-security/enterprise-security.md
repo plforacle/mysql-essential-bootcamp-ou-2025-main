@@ -130,7 +130,7 @@ In this lab, you will work with:
 16. <span style="color:red">Administrative connection: </span>Now exit from administrative session on mysql1 and search the error in the error log.
 
     ```
-    <span style="color:green">shell-mysql1></span> <copy>SET PERSIST mysql_firewall_trace=ON;</copy>
+    <span style="color:blue">mysql></span> <copy>SET PERSIST mysql_firewall_trace=ON;</copy>
     ```
 
     ```
