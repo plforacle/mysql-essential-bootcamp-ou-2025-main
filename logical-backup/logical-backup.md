@@ -184,10 +184,10 @@ If not already connected to app-srv and mysql1 then do the following
 
 
 ## Learn More
-* https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
-* To use MySQL Shell at command line read: https://dev.mysql.com/doc/mysql-shell/8.0/en/command-line-integration-overview.html
-* https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-utilities-dump-instance-schema.html
-* https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-utilities-load-dump.html
+* https://dev.mysql.com/doc/refman/8.4/en/mysqldump.html
+* To use MySQL Shell at command line read: https://dev.mysql.com/doc/mysql-shell/8.4/en/command-line-integration-overview.html
+* https://dev.mysql.com/doc/mysql-shell/8.4/en/mysql-shell-utilities-dump-instance-schema.html
+* https://dev.mysql.com/doc/mysql-shell/8.4/en/mysql-shell-utilities-load-dump.html
 
 
 ## Acknowledgements

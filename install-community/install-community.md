@@ -171,7 +171,7 @@ In this lab, you will be guided through the following tasks:
 
 ## Learn More
 * https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/
-* https://dev.mysql.com/doc/refman/8.0/en/validate-password.htm
+* https://dev.mysql.com/doc/refman/8.4/en/validate-password.html
 
 ## Acknowledgements
 
