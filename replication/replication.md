@@ -76,7 +76,7 @@ In this lab, you will:
     <span style="color:green">shell-mysql2></span> <copy>sudo cp /workshop/support/my.cnf.mysql2 /mysql/etc/my.cnf</copy>
     ```
         ```
-    <span style="color:green">shell-mysql2></span> <copy>nano /mysql/etc/my.cnf</copy>
+    <span style="color:green">shell-mysql2></span> <copy>sudo nano /mysql/etc/my.cnf</copy>
     ```
 
     ```
