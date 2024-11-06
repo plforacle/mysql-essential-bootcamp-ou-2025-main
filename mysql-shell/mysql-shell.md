@@ -123,16 +123,7 @@ In this lab, you will execute MySQL Shell and explore the following on the inter
     <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:yellow">JS</span>><copy>\q</copy>
     ```
 
-7. *** Remove this step mysql no longer exists*** Command line connection from MySQL Client and MySQL Shell are similar. Try these:
-    ```
-    <span style="color:green">shell-mysql1></span> <copy>mysql -uadmin -p -hmysql1 -P3307</copy>
-    ```
-    ```
-    <span style="color:blue">mysql></span> <copy>SHOW DATABASES;</copy>
-    ```
-    ```
-    <span style="color:blue">mysql></span> <copy>exit</copy>
-    ```
+7. The **mysqlsh** command is simmilar to the **mysql** command
     ```
     <span style="color:green">shell-mysql1></span> <copy>mysqlsh -uadmin -p -hmysql1 -P3307</copy>
     ```
