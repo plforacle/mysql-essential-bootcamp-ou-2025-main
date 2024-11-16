@@ -40,6 +40,12 @@ In this lab, you will:
     <span style="color:green">shell-mysql1></span> <copy>mysql -uadmin -p -P3307 -h mysql1 -e "SHOW DATABASES"</copy>
     ```
 
+5. Exit mysql1 server
+
+    ```
+    <span style="color:green">shell-mysql1></span> <copy>exit</copy>
+    ```
+
 ## Task 2: Understand MySQL Connections
 
 1. Connect to mysql1 server through app-srv
