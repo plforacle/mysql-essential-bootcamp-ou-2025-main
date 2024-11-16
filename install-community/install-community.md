@@ -168,6 +168,11 @@ In this lab, you will be guided through the following tasks:
     <span style="color:blue">mysql></span> <copy>GRANT ALL ON *.* TO admin@'%' WITH GRANT OPTION;</copy>
     ```
 
+11. Exit MySQL
+    ```
+    <span style="color:blue">mysql></span> <copy>\q</copy>
+    ```
+
 
 ## Learn More
 * https://dev.mysql.com/doc/mysql-yum-repo-quick-guide/en/

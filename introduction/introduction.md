@@ -26,7 +26,6 @@ In this workshop, you will learn how to work with:
 * Security - MySQL Users, Roles, Firewall, Audit and Masking
 * MySQL Backup - Logical and Enterprise Backup
 * High Availability - Replication and InnoDB Cluster
-* Monitor MySQL 
 
 
 ### Prerequisites 
