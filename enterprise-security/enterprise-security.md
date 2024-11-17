@@ -112,12 +112,12 @@ In this lab, you will work with:
     <span style="color:blue">mysql></span> <copy>SELECT Code, Name, Region FROM country WHERE population > 200000 or 1=1;</copy>
     ```
 
-13. <span style="color:red">Administrative connection: </span>Set now firewall in **detecting** mode
+13. <span style="color:red">Administrative connection: </span>Set the firewall to **detecting** mode now.
     ```
-    <span style="color:blue">mysql></span> <copy>CALL mysql.sp_set_firewall_group_mode('fwtest@%', 'DETECTING');</copy>
+    <span style="color:blue">mysql></span> <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'DETECTING');</copy>
     ```
 
-14. Firewall messages rewuires to increase the default log level
+14. Firewall messages require an increase in the default log level.
     ```
     <span style="color:blue">mysql></span> <copy>SET PERSIST log_error_verbosity=3;</copy>
     ```
@@ -130,15 +130,11 @@ In this lab, you will work with:
 16. <span style="color:red">Administrative connection: </span>Now exit from administrative session on mysql1 and search the error in the error log.
 
     ```
-    <span style="color:blue">mysql></span> <copy>SET PERSIST mysql_firewall_trace=ON;</copy>
-    ```
-
-    ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
 
     ```
-    <span style="color:green">shell-mysql1></span> <copy>grep "MY-011192" /mysql/log/err_log.log</copy>
+    <span style="color:green">shell-mysql1></span> <copy>grep "MY-011191" /mysql/log/err_log.log</copy>
     ```
 
 17. <span style="color:red">Administrative connection:</span> Error log can also be interrogated also from the client.
@@ -146,7 +142,7 @@ In this lab, you will work with:
     <span style="color:green">shell-mysql1></span> <copy>mysqlsh admin@mysql1:3307</copy>
     ```
     ```
-    <span style="color:blue">mysql></span> <copy>SELECT * FROM performance_schema.error_log WHERE ERROR_CODE='MY-011192';</copy>
+    <span style="color:blue">mysql></span> <copy>SELECT * FROM performance_schema.error_log WHERE ERROR_CODE='MY-011191';</copy>
     ```
 
 18. <span style="color:red">Administrative connection:</span> Disable now the firewall and exit from the client
