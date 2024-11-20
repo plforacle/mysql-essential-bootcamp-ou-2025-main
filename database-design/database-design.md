@@ -18,12 +18,23 @@ In this lab, you will:
 
 ## Task 1: Work with SQL CRUD
 
-1. Connect to your <span style="color:red">mysql-advanced</span> with admin user
+1. If not already connected to app-srv and mysql1 then do the following
+    - a. Connect with your SSH client using the public IP and the provided ssh Example of connections from Linux, MAC, Windows Powershell
+
+        ```
+        <span style="color:green">shell></span> <copy> ssh -i id_rsa_app-srv opc@<public_ip></copy>
+        ```
+    - b. Connect to <span style="color:green">shell-mysql1</span>
+        ```
+        <span style="color:green">shell-app-srv$</span> <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
+        ```
+
+2. Connect to your <span style="color:red">mysql-advanced</span> with admin user
     ```
     <span style="color:green">shell></span> <copy>mysqlsh admin@mysql1:3307</copy>
     ```
 
-2. Create a new table poi
+3. Create a new table poi
      ```
     <span style="color:blue">mysql></span> <copy>use world;</copy>
     ```
@@ -34,7 +45,7 @@ In this lab, you will:
     <span style="color:blue">mysql></span> <copy>CREATE TABLE if not exists poi (x Int, y INT, z INT);</copy>
     ```
 
-3. We forgot to add a primary key! Let's add a new column for id used for large integer values
+4. We forgot to add a primary key! Let's add a new column for id used for large integer values
      ```
     <span style="color:blue">mysql></span> <copy>alter table poi add id bigint;</copy>
     ```
@@ -42,22 +53,22 @@ In this lab, you will:
     <span style="color:blue">mysql></span> <copy>ALTER TABLE poi ADD PRIMARY KEY (id);</copy>
     ```
 
-4. Create a copy of your city table
+5. Create a copy of your city table
     ```
     <span style="color:blue">mysql></span> <copy>create table city_part as select * from city;</copy>
     ```
 
-5. How many records does it contain?
+6. How many records does it contain?
     ```
     <span style="color:blue">mysql></span> <copy>SELECT count(*) FROM city_part;</copy>
     ```
 
-6. How many records city table contain?
+7. How many records city table contain?
     ```
     <span style="color:blue">mysql></span> <copy>SELECT count(*) FROM city;</copy>
     ```
 
-7. Verify the difference of the two table creation (there is a big one!)
+8. Verify the difference of the two table creation (there is a big one!)
     ```
     <span style="color:blue">mysql></span> <copy>show create table city\G</copy>
     ```

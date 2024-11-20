@@ -15,6 +15,18 @@ In this lab, you will:
   * Server: mysql1
 
 ## Task 1: Work with SQL
+
+If not already connected to app-srv and mysql1 then do the following
+- a. Connect with your SSH client using the public IP and the provided ssh Example of connections from Linux, MAC, Windows Powershell
+
+    ```
+    <span style="color:green">shell></span> <copy> ssh -i id_rsa_app-srv opc@<public_ip></copy>
+    ```
+- b. Connect to <span style="color:green">shell-mysql1</span>
+    ```
+    <span style="color:green">shell-app-srv$</span> <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
+    ```
+
 1. Connect to your <span style="color:red">mysql-advanced</span> with admin user
     ```
     <span style="color:green">shell></span> <copy>mysqlsh admin@mysql1:3307</copy>
