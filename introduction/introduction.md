@@ -51,4 +51,4 @@ When in the tasks you read:
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
 - **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
-- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, March 2025
