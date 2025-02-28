@@ -170,5 +170,5 @@ The SYS Schema is a collection of views, procedures, and functions designed to s
 ## Acknowledgements 
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
-- **Contributors** -  Perside Foster, MySQL Solution Engineering, Selena Sánchez, MySQL Solutions Engineer
+- **Contributors** -  Satish Senapathy, Senior MySQL Solution Engineer, Selena Sánchez, MySQL Solutions Engineer
 - **Last Updated By/Date** - Perside Foster, MySQL Solution Engineering, March 2025
