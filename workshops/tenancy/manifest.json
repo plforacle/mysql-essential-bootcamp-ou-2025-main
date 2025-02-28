@@ -29,7 +29,7 @@
             "filename": "../../mysql-shell/mysql-shell.md"
         },
         {
-            "title": "Lab 3a: Database Design",
+            "title": "Lab 3: Database Design",
             "filename": "../../database-design/database-design.md"
         },
         {
@@ -49,15 +49,15 @@
             "filename": "../../enterprise-backup/enterprise-backup.md"
         },
         {
-            "title": "Lab 6a: MySQL Replication",
+            "title": "Lab 6: MySQL Replication",
             "filename": "../../replication/replication.md"
         },
         {
-            "title": "Lab 7a: MySQL InnoDB Cluster",
+            "title": "Lab 7: MySQL InnoDB Cluster",
             "filename": "../../innodb-cluster/innodb-cluster.md"
         },
         {
-            "title": "Lab 8a: MySQL Monitoring",
+            "title": "Lab 8: MySQL Monitoring",
             "filename": "../../monitoring/monitoring.md"
         },
         {
@@ -76,10 +76,7 @@
             "title": "Addendum 3: Environment creation steps",
             "filename": "../../addendum-environment-creation/addendum-environment-creation.md"
         },
-        {
-            "title": "Change log",
-            "filename": "../../changelog/changelog.md"
-        },
+
         {
             "title": "Need Help?",
             "description": "Solutions to Common Problems and Directions for Receiving Live Help",
