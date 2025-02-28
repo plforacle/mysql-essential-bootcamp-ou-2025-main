@@ -18,6 +18,7 @@ In this lab, you will:
 - Query Slow Query Log
 - Query Performance Schema
 - Query SYS Schema
+- View Oracle Enterprise Manager for Monitoring MySQL Live Demo
 
  
 ## Task 1: Using Slow Query Log to monitor and analyze slow queries in MySQL
