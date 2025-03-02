@@ -301,4 +301,4 @@ To help you we created one with some variables, please copy it
 
 * **Author** - Marco Carlessi, Principal Sales Consultant
 * **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
-* **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024
+* **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, March 2025

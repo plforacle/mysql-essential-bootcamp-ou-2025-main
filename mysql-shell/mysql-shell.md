@@ -1,20 +1,23 @@
 # MySQL Shell: the new client
 
 ## Introduction
+
 In this lab you will download and start using MySQL Shell.
 
 Estimated Lab Time: 10 minutes
 
 ### Objectives
+
 In this lab, you will execute MySQL Shell and explore the following on the interface:
+
 * Help
 * Settings
 * Test an extension: reporting
 * Command mode
 
-> **Note:** 
-  * Server: mysql1
-  * To close the MySQL Shell you can the commands “\q” or “\exit”
+> **Note:**
+- Server: mysql1
+- To close the MySQL Shell you can the commands “\q” or “\exit”
 
 ## Task 1: Install MySQL Shell on mysql1
 
@@ -30,31 +33,31 @@ In this lab, you will execute MySQL Shell and explore the following on the inter
     <span style="color:green">shell-mysql1></span> <copy>ls -l /workshop/linux/mysql-shell-commercial-8.*.rpm</copy>
     ```
 
-2. Install Mysql Shell, a new client that can be used in devOps organizations (you’ll learn more about it during the course) 
+3. Install Mysql Shell, a new client that can be used in devOps organizations (you’ll learn more about it during the course) 
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>sudo yum install /workshop/linux/mysql-shell-commercial-8.*.rpm</copy>
     ```
 
-3. Launch MySQL shell
+4. Launch MySQL shell
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>mysqlsh</copy>
     ```
 
-4. Discover the command auto-completion feature, type \h and press TAB twice
+5. Discover the command auto-completion feature, type \h and press TAB twice
 
     ```
     <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:orange">SQL</span>><copy>\h</copy> [TAB][TAB]
     ```
 
-5. Check the available options. Add the letter “e” to “\h” and press TAB again to see that the command will automatically complete for you. Press enter and explore the help menu
+6. Check the available options. Add the letter “e” to “\h” and press TAB again to see that the command will automatically complete for you. Press enter and explore the help menu
 
     ```
     <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:orange">SQL</span>><copy>\he</copy> [TAB]
     ```
 
-6. Activate the command history autosave in MySQL shell  
+7. Activate the command history autosave in MySQL shell  
     MySQL Shell comes with the option of automatically saving the history of command disabled by default. Therefore we need to check and to activate it.
     * Show settings and look for history.autoSave
 
@@ -67,7 +70,7 @@ In this lab, you will execute MySQL Shell and explore the following on the inter
     <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:orange">SQL</span>><copy>\option --persist history.autoSave=1</copy>
     ```
 
-7. Close and reopen the session and in the new one **uses the arrow up key** to verify that the data from previous session are available
+8. Close and reopen the session and in the new one **uses the arrow up key** to verify that the data from previous session are available
 
     ```
     <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:orange">SQL</span>><copy>\q</copy>
