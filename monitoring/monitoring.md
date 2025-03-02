@@ -38,13 +38,19 @@ Connect with your SSH client using the public IP and the provided ssh Example of
     <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
     ```
 
-3. Display MySQL configuration variables related to slow query logging.
+3. Login to your mysql
+
+    ```bash
+    <copy>mysql -uadmin -p -h 127.0.0.1 -P3307</copy>
+    ```
+
+4. Display MySQL configuration variables related to slow query logging.
 
     ```bash
     <copy>show variables like '%slow%';</copy>
     ```
 
-4. Enable the slow query log globally.
+5. Enable the slow query log globally.
 
     ```bash
     <copy>SET GLOBAL slow_query_log='ON';</copy>
@@ -54,13 +60,13 @@ Connect with your SSH client using the public IP and the provided ssh Example of
     <copy>\q</copy>
     ```
 
-5. Open the slow query log file for viewing/editing in the vi editor.
+6. Open the slow query log file for viewing/editing in the vi editor.
 
     ```bash
     <copy>sudo vi /var/lib/mysql/oms1-slow.log</copy>
     ```
 
-6. Analyze the slow query log file using mysqldumpslow, which summarizes slow queries, sorts them by execution time, and identifies patterns.
+7. Analyze the slow query log file using mysqldumpslow, which summarizes slow queries, sorts them by execution time, and identifies patterns.
 
     ```bash
     <copy>sudo mysqldumpslow /var/lib/mysql/oms1-slow.log</copy>
@@ -76,43 +82,49 @@ The Performance Schema in MySQL is a powerful tool for monitoring and analyzing 
     <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
     ```
 
-2. Check if Performance Schema is enabled
+2. Login to your mysql
+
+    ```bash
+    <copy>mysql -uadmin -p -h 127.0.0.1 -P3307</copy>
+    ```
+
+3. Check if Performance Schema is enabled
 
     ```bash
     <copy>SHOW VARIABLES LIKE 'performance_schema';</copy>
     ```
 
-3. Switch to the performance_schema database
+4. Switch to the performance_schema database
 
     ```bash
     <copy>use performance_schema;</copy>
     ```
 
-4. List all tables in the performance_schema
+5. List all tables in the performance_schema
 
     ```bash
     <copy>show tables;</copy>
     ```
 
-5. Show configuration of performance data collection components
+6. Show configuration of performance data collection components
 
     ```bash
-    <copy>SELECT * FROM performance_schema.setup_consumers</copy>
+    <copy>SELECT * FROM performance_schema.setup_consumers;</copy>
     ```
 
-6. Retrieve all user data (likely from a different schema)
+7. Retrieve all user data (likely from a different schema)
 
     ```bash
     <copy>select * from users;</copy>
     ```
 
-7. Query for specific statements containing 'janis' in a database:
+8. Query for specific statements containing 'janis' in a database:
 
     ```bash
     <copy>select * from events_statements_summary_by_digest where schema_name = 'mydatabase' and query_sample_text like '%janis%'\G;</copy>
     ```
 
-8. Query analyzing statements with detailed performance metrics for queries containing 't1':
+9. Query analyzing statements with detailed performance metrics for queries containing 't1':
 
     ```bash
     <copy>SELECT
@@ -128,7 +140,7 @@ The Performance Schema in MySQL is a powerful tool for monitoring and analyzing 
     Sql_text FROM  performance_schema.events_statements_history Where sql_text like '%t1%';</copy>
     ```
 
-9. Query for examining execution stages of a specific query (with event_id = 9):
+10. Query for examining execution stages of a specific query (with event_id = 9):
 
     ```bash
     <copy>SELECT 
