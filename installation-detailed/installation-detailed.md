@@ -290,8 +290,9 @@ To help you we created one with some variables, please copy it
     ```
     <span style="color:blue">mysql></span> <copy>SELECT * FROM information_schema.plugins WHERE plugin_name LIKE 'thread%'\G</copy>
     ```
-    
+
 29. Exit MySQL
+
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
