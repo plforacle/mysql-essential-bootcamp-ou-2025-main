@@ -157,7 +157,7 @@ To help you we created one with some variables, please copy it
     <span style="color:green">shell-mysql1></span> <copy>exit</copy>
     ```
 
-16. Log in again from the ssh for the changes to take effect on the user profile.initialize your database
+16. Log in again from the ssh for the changes to take effect on the user profile.
 
     ```
     <span style="color:green">shell-app-srv$</span> <copy>ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1</copy>
@@ -212,6 +212,9 @@ To help you we created one with some variables, please copy it
     ```
     <span style="color:blue">mysql></span> <copy>exit</copy>
     ```
+
+    - Using **-h 127.0.0.1** instead of **-hlocalhost** bypasses hostname resolution and connects directly via IP address
+    - This direct IP approach is particularly useful when troubleshooting connection issues or when configuring precise network settings.
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>mysqladmin -uroot -h127.0.0.1 -p -P3307 shutdown</copy>
