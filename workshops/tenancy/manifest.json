@@ -29,9 +29,15 @@
             "filename": "../../mysql-shell/mysql-shell.md"
         },
         {
-            "title": "Lab 3: Database Design",
+            "title": "Lab 3a: Database Design",
             "filename": "../../database-design/database-design.md"
         },
+
+        {
+            "title": "Lab 3b: Database Design BONUS",
+            "filename": "../../database-design-bonus/database-design-bonus.md"
+        },
+
         {
             "title": "Lab 4a: User management and roles",
             "filename": "../../user-management/user-management.md"
