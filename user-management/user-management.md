@@ -49,27 +49,29 @@ In this lab, you will:
     ```
     <span style="color:blue">mysql></span> <copy>GRANT ALL PRIVILEGES ON world.* TO 'appuser'@'app-srv.%';</copy>
     ```
+    
     ```
     <span style="color:blue">mysql></span> <copy>SHOW GRANTS FOR 'appuser'@'app-srv.%';</copy>
     ```
  
 6. <span style="color:red">Keep previous connection open</span> and open a new shell connection to app-srv, then connect as user appuser to mysql1 to test the connection.  
-   > Note:  
+
+    > Note:  
         * Please remember that the user "appuser" can connect only from this server  
-        * Please ignore the error "Error during auto-completion cache update: Access denied..." related to lack of privileges for the user. If you want to disable the message disable **autocomplete.nameCache** option  
-    
-   ```
-   <span style="color:green">shell-app-srv$</span> <copy>mysqlsh appuser@mysql1:3307</copy>
-   ```
-   ```
-   <span style="color:blue">mysql></span> <copy>USE world;</copy>
-   ```
-   ```
-   <span style="color:blue">mysql></span> <copy>SHOW TABLES;</copy>
-   ```
-   ```
-   <span style="color:blue">mysql></span> <copy>SELECT * FROM city limit 10;</copy>
-   ```
+        * Please ignore the error "Error during auto-completion cache update: Access denied.." related to lack of privileges for the user. If you want to disable the message disable **autocomplete.nameCache** option  
+
+    ```
+    <span style="color:green">shell-app-srv$</span> <copy>mysqlsh appuser@mysql1:3307</copy>
+    ```
+    ```
+    <span style="color:blue">mysql></span> <copy>USE world;</copy>
+    ```
+    ```
+    <span style="color:blue">mysql></span> <copy>SHOW TABLES;</copy>
+    ```
+    ```
+    <span style="color:blue">mysql></span> <copy>SELECT * FROM city limit 10;</copy>
+    ```
 
 7. (<span style="color:red">admin connection</span>) Switch to the administrative connection revoke privilege on city to appuser
     ```
@@ -252,6 +254,7 @@ In this lab, you will:
     ```
 
 6. Now you can exit from appuser2 connection
+
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
     ```
@@ -260,4 +263,4 @@ In this lab, you will:
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
 - **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
-- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, November 2024
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, March 2025
