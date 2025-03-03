@@ -129,6 +129,7 @@ In this lab, you will:
 
 
 ## Task 2: Create Cluster 
+
 1. We can do it from any server, we use here app-srv
 
     ```
@@ -242,6 +243,8 @@ In this lab, you will:
     one server failure.
      ```
 
+> Note:  
+         When your SSH session times out after 5 minutes idle, you lose all defined variables including cluster. Upon reconnecting, you must run var <span style="color:red">cluster = dba.getCluster()</span> to regain access to your MySQL cluster before continuing your work.  
 
 6. Verify cluster status (why "Cluster is NOT tolerant to any failures" ?)
     ```
