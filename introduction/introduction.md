@@ -51,6 +51,10 @@ When in the tasks you read:
 2. * [Tuesday    : NA Bootcamp 03-04-2025](files/tuesday.zip)
 3. * [Wednesday  : NA Bootcamp 03-05-2025](files/wednesday.zip)
 
+4. * [For Patricia.  : backup](files/backup.pdf)
+
+
+
 ## Acknowledgements
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
