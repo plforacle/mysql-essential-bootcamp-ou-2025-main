@@ -46,10 +46,10 @@ When in the tasks you read:
 ### Software used in the labs
 * When all lab 1s are completed, the software is located within each server in the directory “/workshop”
 
-### Download Lab Material
-1. * [Monday](files/monday.zip)
-2. * [Tuesday](files/tuesday.zip)
-
+## Download Lab Material
+1. * [Monday     : NA Bootcamp 03-03-2025](files/monday.zip)
+2. * [Tuesday    : NA Bootcamp 03-04-2025](files/tuesday.zip)
+3. * [Wednesday  : NA Bootcamp 03-05-2025](files/wednesday.zip)
 
 ## Acknowledgements
 
