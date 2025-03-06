@@ -53,7 +53,8 @@ When in the tasks you read:
 4. * [Thursday   : NA Bootcamp 03-06-2025](files/thursday.zip)
 5. * [For Patricia.  : backup](files/backup.pdf)
 6. * [Study Guide: To be used with presentation slides](files/mysql_bootcamp_study_guide_32025.pdf)
-
+7. * [NoSQL and JSON Slides: DatabaseDesignBonus slides](files/MySQLDatabaseDesignBonusSlides.pdf)
+8. * [NoSQL and JSON Lab: DatabaseDesignBonus lab](files/MySQLDatabaseDesignBonusLab.pdf)
 
 ## Acknowledgements
 
