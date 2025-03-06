@@ -51,10 +51,8 @@ When in the tasks you read:
 2. * [Tuesday    : NA Bootcamp 03-04-2025](files/tuesday.zip)
 3. * [Wednesday  : NA Bootcamp 03-05-2025](files/wednesday.zip)
 4. * [Thursday   : NA Bootcamp 03-06-2025](files/thursday.zip)
-
-
 5. * [For Patricia.  : backup](files/backup.pdf)
-
+6. * [Study Guide: To be used with presentation slides](files/mysql_bootcamp_study_guide_32025.pdf)
 
 
 ## Acknowledgements
