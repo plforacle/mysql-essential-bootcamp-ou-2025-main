@@ -46,15 +46,10 @@ When in the tasks you read:
 ### Software used in the labs
 * When all lab 1s are completed, the software is located within each server in the directory “/workshop”
 
-## Download Lab Material
-1. * [Monday     : NA Bootcamp 03-03-2025](files/monday.zip)
-2. * [Tuesday    : NA Bootcamp 03-04-2025](files/tuesday.zip)
-3. * [Wednesday  : NA Bootcamp 03-05-2025](files/wednesday.zip)
-4. * [Thursday   : NA Bootcamp 03-06-2025](files/thursday.zip)
-5. * [For Patricia.  : backup](files/backup.pdf)
-6. * [Study Guide: To be used with presentation slides](files/mysql_bootcamp_study_guide_32025.pdf)
-7. * [NoSQL and JSON Slides: DatabaseDesignBonus slides](files/MySQLDatabaseDesignBonusSlides.pdf)
-8. * [NoSQL and JSON Lab: DatabaseDesignBonus lab](files/MySQLDatabaseDesignBonusLab.pdf)
+## Download Lab Materia
+
+1. * [Study Guide: File](files/mysql_bootcamp_study_guide_32025.pdf)
+2. * [Study Guide: Slides](files/review.zip)
 
 ## Acknowledgements
 
