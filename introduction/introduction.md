@@ -46,11 +46,6 @@ When in the tasks you read:
 ### Software used in the labs
 * When all lab 1s are completed, the software is located within each server in the directory “/workshop”
 
-## Download Lab Materia
-
-1. * [Study Guide: File](files/mysql_bootcamp_study_guide_32025.pdf)
-2. * [Study Guide: Slides](files/review.zip)
-
 ## Acknowledgements
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
