@@ -303,4 +303,4 @@ In this lab, you will work with:
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
 - **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
-- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, March 2025
+- **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, April 2025

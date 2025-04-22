@@ -151,25 +151,13 @@ To help you we created one with some variables, please copy it
     <span style="color:green">shell-mysql1></span> <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf --initialize --user=mysqluser </copy>
     ```
 
-15. Log out.
-
-    ```
-    <span style="color:green">shell-mysql1></span> <copy>exit</copy>
-    ```
-
-16. Log in again from the ssh for the changes to take effect on the user profile.
-
-    ```
-    <span style="color:green">shell-app-srv$</span> <copy>ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1</copy>
-    ```
-
-17. Start your new mysql instance
+15. Start your new mysql instance
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>sudo /mysql/mysql-latest/bin/mysqld --defaults-file=/mysql/etc/my.cnf --user=mysqluser & </copy>
     ```
 
-18. Verify that process is running
+16. Verify that process is running
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>ps -ef | grep mysqld </copy>
@@ -179,19 +167,19 @@ To help you we created one with some variables, please copy it
     <span style="color:green">shell-mysql1></span> <copy>netstat -an | grep 3307 </copy>
     ```
 
-19. Another way is searching the message “ready for connections” in error log as one of the last
+17. Another way is searching the message “ready for connections” in error log as one of the last
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>grep -i ready /mysql/log/err_log.log </copy>
     ```
 
-21. Retrieve root password for first login
+18. Retrieve root password for first login
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>grep -i 'temporary password' /mysql/log/err_log.log</copy>
     ```
 
-22. Login to your mysql-advanced using the temporary password and set the new one
+19. Login to your mysql-advanced using the temporary password and set the new one
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>mysql -uroot -p -h 127.0.0.1 -P3307</copy>
@@ -201,13 +189,13 @@ To help you we created one with some variables, please copy it
     <span style="color:blue">mysql></span> <copy>SET PASSWORD='Welcome1!';</copy>
     ```
 
-23. Check server status.  
+20. Check server status.  
 
     ```
     <span style="color:blue">mysql></span> <copy>status</copy>
     ```
 
-24. Shutdown the service  
+21. Shutdown the service  
 
     ```
     <span style="color:blue">mysql></span> <copy>exit</copy>
@@ -220,7 +208,7 @@ To help you we created one with some variables, please copy it
     <span style="color:green">shell-mysql1></span> <copy>mysqladmin -uroot -h127.0.0.1 -p -P3307 shutdown</copy>
     ```
 
-25. Configure automatic startup and shutdown with system, adding a systemd service unit configuration file with details about the MySQL service.
+22. Configure automatic startup and shutdown with system, adding a systemd service unit configuration file with details about the MySQL service.
 
     The file is named mysqld.service and is placed in /usr/lib/systemd/system. We created one for you (See addendum for the content)
 
@@ -236,7 +224,7 @@ To help you we created one with some variables, please copy it
     <span style="color:green">shell-mysql1></span> <copy>sudo systemctl enable mysqld-advanced.service</copy>
     ```
 
-26. Test start, stop and restart
+23. Test start, stop and restart
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>sudo systemctl start mysqld-advanced</copy>
@@ -262,7 +250,7 @@ To help you we created one with some variables, please copy it
     <span style="color:green">shell-mysql1></span> <copy>sudo systemctl status mysqld-advanced</copy>
     ```
 
-27. Create a new administrative user called 'admin' with remote access and full privileges
+24. Create a new administrative user called 'admin' with remote access and full privileges
 
     ```
     <span style="color:green">shell-mysql1></span> <copy>mysql -uroot -p -h 127.0.0.1 -P3307</copy>
@@ -276,7 +264,7 @@ To help you we created one with some variables, please copy it
     <span style="color:blue">mysql></span> <copy>GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;</copy>
     ```
 
-28. In the configuration file was specified to load the commercial Thread Pool Plugin, now let's check if it’s loaded and active.  
+25. In the configuration file was specified to load the commercial Thread Pool Plugin, now let's check if it’s loaded and active.  
     We can use different commands, please note that the last two are the same query with a different line terminator (“;” vs “\G” show output in a different format)
 
     ```
@@ -291,7 +279,7 @@ To help you we created one with some variables, please copy it
     <span style="color:blue">mysql></span> <copy>SELECT * FROM information_schema.plugins WHERE plugin_name LIKE 'thread%'\G</copy>
     ```
 
-29. Exit MySQL
+26. Exit MySQL
 
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
@@ -301,4 +289,4 @@ To help you we created one with some variables, please copy it
 
 * **Author** - Marco Carlessi, Principal Sales Consultant
 * **Contributors** -  Perside Foster, Principal Sales Consultant, Selena Sánchez, MySQL Solutions Engineer
-* **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, March 2025
+* **Last Updated By/Date** - Perside Foster, Partner Solutions Engineer, April 2025
