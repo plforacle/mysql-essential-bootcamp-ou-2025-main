@@ -138,16 +138,20 @@ In this lab, you will work with:
     ```
 
 17. <span style="color:red">Administrative connection:</span> Error log can also be interrogated also from the client.
+
     ```
     <span style="color:green">shell-mysql1></span> <copy>mysqlsh admin@mysql1:3307</copy>
     ```
+
     ```
-    <span style="color:blue">mysql></span> <copy>SELECT * FROM performance_schema.error_log WHERE ERROR_CODE='MY-011191';</copy>
+    <span style="color:blue">mysql></span> <copy>SELECT * FROM performance_schema.error_log WHERE ERROR_CODE='MY-011191';
+    </copy>
     ```
 
 18. <span style="color:red">Administrative connection:</span> Disable now the firewall and exit from the client
+
     ```
-    <span style="color:blue">mysql></span> <copy>CALL mysql.sp_set_firewall_mode('fwtest@%', 'OFF');</copy>
+    <span style="color:blue">mysql></span> <copy>CALL mysql.sp_set_firewall_group_mode('fwgrp', 'OFF');</copy>
     ```
     ```
     <span style="color:blue">mysql></span> <copy>\q</copy>
