@@ -15,69 +15,32 @@ Estimated Lab Time: 40 minutes
 
 In this lab, you will:
 
-- Install airportdb   
+- Install employees sample database  
 - Query Slow Query Log
 - Query Performance Schema
 - Query SYS Schema
 - View Oracle Enterprise Manager for Monitoring MySQL Live Demo
 
-## Task 1: Install Airportdb
+## Task 1:Install Employee Sample Database
 
-1. If not already connected to app-srv and mysql1 then do the following
-Connect with your SSH client using the public IP and the provided ssh Example of connections from Linux, MAC, Windows Powershell
-
-    ```bash
-    <copy> ssh -i id_rsa_app-srv opc@<public_ip></copy>
+1. If not already connected, connect to mysql1 server thought app-srv
+    ```
+    <span style="color:green">shell-app-srv$</span> <copy>ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
     ```
 
-2. Connect to shell-mysql1
-
-    ```bash
-    <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
+2. Import the employees demo database that is in /workshop/databases folder.
+    ```
+    <span style="color:green">shell-mysql1></span> <copy>cd /workshop/databases/employees</copy>
     ```
 
-3. Download the airportdb database file
-
-    ```bash
-    <copy>wget https://downloads.mysql.com/docs/airport-db.zip</copy>
+    ```
+    <span style="color:green">shell-mysql1></span> <copy>mysql -uadmin -p -P3307 -h mysql1 < ./employees.sql</copy>
     ```
 
-4. Unzip airportdb database file
+3. Check that we have now the employees demo database in our instance
 
-    ```bash
-    <copy>unzip airport-db.zip</copy>
     ```
-
-5. Login to MySQL
-
-    ```bash
-    <copy>mysqlsh -uadmin -p -h 127.0.0.1 -P3307</copy>
-    ```
-
-6. Load the airportdb data files into the MySQL using the MySQL Shell Dump Loading utility.
-
-    ```bash
-    <copy>\js</copy>
-    ```
-
-    ```bash
-    <copy>util.loadDump("airport-db", {threads: 16, deferTableIndexes: "all", ignoreVersion: true, loadIndexes:false})</copy>
-    ```
-
-7. List databases
-
-    ```bash
-    <copy>\sql</copy>
-   ```
-
-    ```bash
-    <copy>SHOW DATABASES;</copy>
-    ```
-
-8. Exit MySQL
-
-    ```bash
-    <copy>\q</copy>
+    <span style="color:green">shell-mysql1></span> <copy>mysql -uadmin -p -P3307 -h mysql1 -e "SHOW DATABASES"</copy>
     ```
 
 ## Task 2: Using Slow Query Log to monitor and analyze slow queries in MySQL
@@ -118,13 +81,13 @@ The Slow Query Log is a feature in MySQL that allows you to log queries that tak
 6. Set long\_query\_time
 
     ```bash
-    <copy>SET GLOBAL long_query_time = 1;</copy>
+    <copy>SET GLOBAL long_query_time = 0.01;</copy>
     ```
 
-7. Change database to airportdb
+7. Change database to employees
 
     ```bash
-    <copy>use airportdb;</copy>
+    <copy>use employees;</copy>
     ```
 
 8. Show Tables
@@ -136,7 +99,7 @@ The Slow Query Log is a feature in MySQL that allows you to log queries that tak
 9. Execute Query
 
     ```bash
-    <copy>SELECT * FROM booking ORDER BY RAND() limit 100;</copy>
+    <copy>select hire_date,dept_name,salary from employees.salaries join employees.dept_emp using(emp_no) join employees.departments using(dept_no) join employees.employees using(emp_no) where salary=(select max(salary) from employees.salaries);</copy>
     ```
 
 10. Exit MySQL
@@ -194,13 +157,13 @@ The Performance Schema in MySQL is a powerful tool for monitoring and analyzing 
 6. Run Query
 
     ```bash
-    <copy>SELECT a.airlinename, f.flightno, f.departure, f.arrival, b.seat, b.price FROM airline a JOIN flight f ON a.airline_id = f.airline_id JOIN booking b ON f.flight_id = b.flight_id WHERE a.airlinename like '%Air%' ORDER BY f.departure, b.seat limit 10;</copy>
+    <copy>select hire_date,dept_name,salary from employees.salaries join employees.dept_emp using(emp_no) join employees.departments using(dept_no) join employees.employees using(emp_no) where salary=(select max(salary) from employees.salaries);</copy>
     ```
 
 7. Get event\_id for the query
 
     ```bash
-    <copy>SELECT EVENT_ID, TRUNCATE(TIMER_WAIT/1000000000000,6) as Duration, SQL_TEXT FROM  performance_schema.events_statements_history_long WHERE SQL_TEXT like '%airlinename%limit%';</copy>
+    <copy>SELECT EVENT_ID, TRUNCATE(TIMER_WAIT/1000000000000,6) as Duration, SQL_TEXT FROM  performance_schema.events_statements_history_long WHERE SQL_TEXT like '%select max(salary)%';</copy>
     ```
 
 8. Get query stage information
